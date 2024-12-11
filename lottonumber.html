@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>수심탐 로또 번호 뭐임</title>
+        <link rel="stylesheet" href="count.css">
+        <!--이제 n초 뒤에 글자 나타나기 꼼수방지, 글자에 그라데이션 넣을듯-->
+        <script>
+            window.onload = function() {
+                const currentTime = new Date();
+                const currentHour = currentTime.getHours();
+                const startHour = 14;
+                const endHour = 24;
+                if (currentHour >= startHour && currentHour < endHour) {
+                    console.log("페이지를 열 수 있습니다.");
+                } else {
+                    alert("2시에 번호가 공개됩니다. 창을 닫고 다른 부스를 즐겨주세요");
+                    location.reload();
+                }
+            };
+        </script>
+        <style>
+            button {
+            top: 70%; /* 상단에서 70% 위치 */
+            font-size: 1rem; /* 기본 버튼 글자 크기 */
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: 
+            rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            box-shadow: 0;
+            border-radius: 3rem;
+            
+            }
+            @media (max-width: 768px) {
+                h2 {
+                top: 20%; /* 모바일에서는 20% 위치로 이동 */
+                font-size: 1.5rem; /* 작은 화면에서 글자 크기 조정 */
+                }
+
+                button {
+                top: 60%; /* 버튼들 위치를 60%로 조정 */
+                font-size: 0.9rem; /* 작은 화면에서 버튼 글자 크기 조정 */
+                padding: 8px 16px; /* 버튼 크기 조정 */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h2>로또 번호</h2>
+        <button onclick="setTimeout(function() {
+            document.getElementsByTagName('h2')[0].innerHTML='2 12 7'}, 3000)"
+            >3초 후에 공개됩니다</button>
+    </body>
+</html>
